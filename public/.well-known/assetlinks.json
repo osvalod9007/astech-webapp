@@ -1,0 +1,10 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.astech.mobile",
+      "sha256_cert_fingerprints":
+      ["59:6E:0E:C3:02:11:5F:4E:13:28:0D:98:D6:22:8C:B0:0E:F4:DD:5B:4A:AB:4D:83:D6:C7:AF:66:B6:8E:B9:59"]
+    }
+  }]
+  

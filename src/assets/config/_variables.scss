@@ -1,0 +1,35 @@
+$max-width: 1200px;
+$header-height: 4rem;
+
+$border-color: #ccc;
+
+$text-color: #53575A;
+$dark-color: #141618;
+
+$breakpoints: (
+  l: 960px
+);
+
+// colors
+:root {
+  --color-first: #007BDF;
+  --color-border: #dfe0e0;
+  --color-alert: #ff3c32;
+  // colors astech
+  --lightBlue: #92c6ea;
+  --blueDark1: #266cb2;
+  --blueDark2: #11537f;
+  --green: #00c400;
+  --gray: #e2e2e2;
+  --red: #da2633;
+  --yellow: #d4cd00;
+}
+
+// (z-index)
+:root {
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}

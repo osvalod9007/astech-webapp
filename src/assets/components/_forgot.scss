@@ -1,0 +1,44 @@
+    .forgot-password {
+        .main {
+            margin-top: 1.5rem;
+            
+        }
+        .container-forgot {
+            display: flex;
+            justify-content: center;
+            .align-center {
+                width: 80%;
+                h1 {
+                    color: var(--green);
+                    font-size: 24px;
+                    margin: 0;
+                }
+                hr {
+                    margin: 0;
+                    background-color: var(--green);
+                    border: 0;
+                    height: 3px;
+                }
+            }
+            .center-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .space {
+                    margin: 2rem 0;
+                }
+                h2 {
+                    color: var(--blueDark1);
+                    font-size: 22px;
+                }
+                .hint {
+                    margin: 0;
+                    font-size: 12px;
+                }
+                .custom-send {
+                    margin-top: 1rem;
+                    background-color: var(--green);
+                }
+            }
+        }
+    }

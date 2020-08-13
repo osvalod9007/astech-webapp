@@ -1,0 +1,26 @@
+.dialog-logout {
+    .container-logout {
+        padding: 20px;
+        .close {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .dialog-text {
+            margin: 40px;
+            p {
+                font-size: 20px;
+            }
+        }
+        .actions-logout {
+            display: flex;
+            text-align: center;
+            font-size: 18px;
+            .space {
+                width: 50%;
+            }
+            .yes {
+                color: var(--green);
+            }
+        }
+    }
+}

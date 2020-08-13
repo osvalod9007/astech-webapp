@@ -1,0 +1,62 @@
+.dialog-privacy-policy {
+    overflow: hidden;
+    .container-privacy-policy {
+        height: 500px;
+        margin: 40px 50px;
+        .close {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+        .custom-scroll {
+            padding: 20px;
+            height: 500px;
+            overflow-y: scroll;
+            
+            .header-dialog {
+                .container-image {
+                    width: 120px;
+                }
+                .link {
+                    text-align: right;
+                    width: 100%;
+                    a {
+                        text-decoration: none;
+                    display: inline-block;
+                    width: 100%;
+                    color: var(--green);
+                    }
+                }
+            }
+            .paragraph {
+                text-align: justify;
+            }
+            h4 {
+                font-size: 14px;
+                color: var(--green);
+            }
+        }
+        
+    }
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

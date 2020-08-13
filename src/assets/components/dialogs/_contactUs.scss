@@ -1,0 +1,46 @@
+.container-dialog {
+  background-color: white;
+  width: 380px;
+  padding: 20px 30px;
+  text-align: center;
+
+  .close  {
+    width: 100% !important;
+    display: flex;
+    justify-content: flex-end;
+    .icons-size {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .title-dialog {
+    color: var(--green);
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 30px;
+    hr {
+      background-color: var(--green);
+      border: 0;
+      height: 2px;
+    }
+    p {
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+  .info-contact {
+    display: flex;
+    flex-direction: column;
+    color: gray;
+    .number-phone {
+      font-size: 26px;
+    }
+    .email {
+      margin-bottom: 20px;
+    }
+    .date {
+      font-size: 18px;
+    }
+  }
+}

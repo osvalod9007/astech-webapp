@@ -1,0 +1,55 @@
+
+version: 0.2
+
+env:
+  variables:
+    AWS_DEFAULT_REGION: us-east-1
+    SECRET_BUCKET: s3://secrets-lighthousetech-io
+    S3_BUILD_BUCKET: s3://builds-lighthousetech-io
+    REPO: astech-webapp
+    S3_BUCKET: s3://astech-webapp
+    stg_distribution: E2816WSMD1X5TX
+    qa_distribution: E2WAJ1VEA08U1D
+    dev_distribution: E2816WSMD1X5TX
+    prod_distribution: E2816WSMD1X5TX
+    CURRENT_RELEASES: 000-CURRENT_RELEASES
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - echo Starting install phase...
+
+  pre_build:
+    commands:
+      - echo pre_build phase...
+      - IMAGE_TAG=$GIT_COMMIT
+      - echo $IMAGE_TAG
+      - |
+        if [ "$ENVIRONMENT" = "stg" ]; then
+          DISTRIBUTION=$stg_distribution;
+        elif [ "$ENVIRONMENT" = "qa" ]; then
+          DISTRIBUTION=$qa_distribution;
+        elif [ "$ENVIRONMENT" = "prod" ]; then
+          DISTRIBUTION=$prod_distribution;
+        else
+          DISTRIBUTION=$dev_distribution;
+        fi
+      - echo
+      - OBJECT_EXIST=$(aws s3 ls $S3_BUILD_BUCKET/$REPO/build/$ENVIRONMENT/$IMAGE_TAG/index.html | wc -l)
+      - echo $OBJECT_EXIST
+      - if [ "$OBJECT_EXIST" != "1" ]; then aws codebuild stop-build; else echo 0; fi
+
+  build:
+    commands:
+      - echo Angular Build started on `date`
+      - aws s3 rm $S3_BUCKET/$ENVIRONMENT --recursive
+      - aws s3 cp $S3_BUILD_BUCKET/$REPO/build/$ENVIRONMENT/$IMAGE_TAG $S3_BUCKET/$ENVIRONMENT --recursive
+      - aws s3 rm $S3_BUILD_BUCKET/$REPO/build/$CURRENT_RELEASES/$ENVIRONMENT/ --recursive
+      - aws s3 cp $S3_BUILD_BUCKET/$REPO/build/$ENVIRONMENT/$IMAGE_TAG $S3_BUILD_BUCKET/$REPO/build/$CURRENT_RELEASES/$ENVIRONMENT/$IMAGE_TAG --recursive
+      - aws cloudfront create-invalidation --distribution-id=$DISTRIBUTION --paths "/*"
+
+  post_build:
+    commands:
+      - echo Build completed on `date`

@@ -1,0 +1,39 @@
+.form-user-information {
+  .form-control {
+    margin-bottom: 15px;
+  }
+}
+
+.user-information-content-avatar {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    margin: auto;
+  }
+
+  .user-information-avatar {
+    width: 84px;
+    height: 84px;
+    border: solid 2px var(--red);
+  }
+
+  .user-information-avatar-helper-text {
+    text-align: center;
+  }
+}
+
+.related-shops {
+  height: 100%;
+  border-left: 1px solid var(--color-border);
+
+  .shop {
+    .shop-content {
+      .MuiTypography-root {
+        margin-bottom: 10px;
+        color: #000000;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.dialog-about {
+    .container-about {
+        
+        width: 500px;
+        padding: 35px;
+        .header-about {
+            margin: 0 auto;
+            width: 120px;
+        }
+        .close {
+            display: flex;
+            justify-content: flex-end;
+            .icons-size {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        
+        .paragraph {
+            text-align: justify;
+        }
+    }
+}

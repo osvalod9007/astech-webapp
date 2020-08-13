@@ -1,0 +1,38 @@
+version: 0.2
+
+env:
+  variables:
+    AWS_DEFAULT_REGION: us-east-1
+    SECRET_BUCKET: s3://secrets-lighthousetech-io
+    S3_BUILD_BUCKET: s3://builds-lighthousetech-io
+    REPO: astech-webapp
+    BUILD_PATH: build
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - echo Starting install phase...
+      - OWNER=$(echo $GIT_URL | awk -F'[/]' '{print $4}')
+      - aws s3 cp $SECRET_BUCKET/$REPO/$ENVIRONMENT/ . --recursive --region $AWS_DEFAULT_REGION
+      - export IMAGE_TAG=$GIT_COMMIT
+
+  build:
+    commands:
+      - echo React Build started on `date`
+      - export OBJECT_EXIST=$(aws s3 ls $S3_BUCKET/$REPO/build/$ENVIRONMENT/$IMAGE_TAG/index.html | wc -l)
+      - |
+        if [ "$OBJECT_EXIST" != "1" ]; then
+          node --version
+          npm --version
+          npm install
+          npm run build
+          npm run build
+          aws s3 rm $S3_BUILD_BUCKET/$REPO/build/$ENVIRONMENT/$IMAGE_TAG/ --recursive
+          aws s3 cp $BUILD_PATH $S3_BUILD_BUCKET/$REPO/build/$ENVIRONMENT/$IMAGE_TAG/ --recursive
+         fi
+
+  post_build:
+    commands:
+      - echo Build completed on `date`

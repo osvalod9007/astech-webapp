@@ -1,0 +1,172 @@
+.dashboard {
+  display: flex;
+
+  .drawer {
+    .simple-list-menu {
+      margin-top: 70px;
+      color: white;
+    }
+
+    .custom-list {
+      .container-expantion {
+        .center-content-menu {
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+
+          .size-icon {
+            width: 25px;
+            height: 25px;
+            margin-right: 7px;
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    .content-devices {
+      .general-devices-info {
+        height: calc(100vh - 64px);
+
+        min-height: 100%;
+        width: 15%;
+        outline: 1px solid gray;
+
+        .title-info {
+          background-color: gray;
+          color: white;
+          text-align: center;
+          font-weight: bold;
+          font-size: 16px;
+          padding: 0.7rem;
+        }
+
+        .counters {
+          color: gray;
+          text-align: center;
+          padding: 0.7rem;
+
+          .count {
+            display: block;
+            font-size: 20px;
+            margin: 5px;
+            font-weight: bold;
+          }
+
+          .span-title {
+            display: block;
+            margin: 5px;
+            font-size: 14px;
+          }
+        }
+
+        .selected {
+          background-color: var(--blueDark1) !important;
+          color: white !important;
+        }
+      }
+
+      .cards-devices {
+        padding: 15px;
+        width: 85%;
+
+        .list-card {
+          margin: 0 auto 1.5rem;
+          width: 90%;
+          -webkit-box-shadow: 10px 10px 33px 1px rgba(0, 0, 0, 0.31);
+          -moz-box-shadow: 10px 10px 33px 1px rgba(0, 0, 0, 0.31);
+          box-shadow: 10px 10px 33px 1px rgba(0, 0, 0, 0.31);
+          display: flex;
+
+          .card-device {
+            padding: 5px;
+            margin: 10px;
+            border-right: 0.7px solid gray;
+            width: 80%;
+            justify-content: space-between;
+
+            .type-card {
+              display: flex;
+              margin-left: 10px;
+              margin-bottom: 10px;
+              .icon-header-card {
+                width: 22px;
+                height: 22px;
+                margin-right: 5px;
+              }
+              .status-device {
+                color: var(--green);
+                font-size: 18px;
+              }
+            }
+
+            .container-card {
+              display: flex;
+              justify-content: space-between;
+
+              .info-car {
+                width: 50%;
+
+                .first-row,
+                .second-row {
+                  width: 100%;
+                  display: flex;
+                  justify-content: space-between;
+                  margin-bottom: 10px;
+                  .label__data {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    margin-left: 10px;
+
+                    .label {
+                      font-size: 11px;
+                      color: gray;
+                    }
+
+                    .value {
+                      font-size: 14px;
+                    }
+                  }
+                }
+              }
+
+              .scan-history {
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+
+                .icon {
+                  display: flex;
+                  justify-content: center;
+                  width: 100%;
+                }
+              }
+            }
+          }
+
+          .action-button {
+            width: 20%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.list-item {
+  .container-icon {
+    min-width: 30px;
+
+    .size-icon {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+.text-white {
+  color: white;
+}

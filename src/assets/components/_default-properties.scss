@@ -1,0 +1,72 @@
+body  .text-color-white {
+  color: #ffffff;
+}
+
+body .text-color-blue {
+  color: var(--color-first);
+}
+
+body .text-color-green {
+  color: var(--green);
+}
+
+body .text-color-red {
+  color: var(--red);
+}
+
+body .background-color-white {
+  background-color: #ffffff;
+}
+
+body .background-color-blue {
+  background-color: var(--color-first);
+}
+
+body .background-color-green {
+  background-color: var(--green);
+}
+
+body .background-color-red {
+  background-color: var(--red);
+}
+
+
+body .background-color-blue-hover:hover {
+  background-color: var(--blueDark1);
+}
+
+body .background-color-green-hover:hover {
+  background-color: var(--green);
+}
+
+body .background-color-red-hover:hover {
+  background-color: var(--red);
+}
+
+body .default-button {
+  width: fit-content;
+}
+
+body .form-control {
+  width: 100%;
+}
+
+.button-submitting {
+  position: relative;
+}
+
+.button-submitting::before {
+  content: '';
+  position: absolute;
+  opacity: 0.4;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.button-submitting-spinner {
+  width: 27px;
+  height: 27px;
+}

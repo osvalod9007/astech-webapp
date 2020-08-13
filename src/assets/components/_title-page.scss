@@ -1,0 +1,11 @@
+.title-page {
+    color: var(--green);
+    flex: 1;
+
+    .title-page-divider {
+        color: var(--green);
+        height: 2px;
+        background-color: var(--green);
+        margin-bottom: 10px;
+    }
+}

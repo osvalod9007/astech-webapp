@@ -1,0 +1,106 @@
+.users-content {
+  .user-list-filters {
+    margin-top: 32px;
+    .user-list-search-text {
+      border-radius: 10px;
+      input {
+        padding: 7px;
+      }
+    }
+  }
+
+  .user-list-first-cell,
+  .user-list-last-cell {
+    padding: 0px;
+    * {
+      padding: 0px;
+    }
+
+    .icon-size {
+      width: 28px;
+      height: 28px;
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+  .user-list-name-cell {
+    display: flex;
+    align-items: center;
+  }
+
+  .user-invitation-form {
+    .error-text {
+      text-align: center;
+      background-color: var(--red);
+      color: var(--gray);
+      margin: auto;
+      padding: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-text {
+      text-align: center;
+      color: $text-color;
+      width: 80%;
+      margin: 15px auto;
+    }
+  }
+}
+
+body .custom-dialog {
+  max-width: 450px;
+  width: 100%;
+
+  .custom-dialog-container {
+    .close {
+      cursor: pointer;
+      text-align: end;
+    }
+
+    .dialog-text {
+      text-align: center;
+      > p {
+        padding: 40px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .user-invitation-form-on-dialog {
+    .bulk-error-text {
+      text-align: center;
+      color: var(--red);
+      margin: 40px auto 0;
+      padding: 10px;
+      white-space: pre-line;
+    }
+  }
+}
+
+.bulk-emails-user-invitation {
+  word-break: break-all;
+}
+
+.bulk-emails-user-invitation {
+  word-break: break-all;
+}
+
+.icon-spin {
+  animation-name: spin;
+  animation-duration: 1500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

@@ -1,0 +1,26 @@
+.dialog-confirm {
+    .container-dialog {
+        width: 600px;
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        .title-dialog {
+            color: var(--blueDark1);
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 2rem;
+            span {
+                display: inline-block;
+            }
+        }
+        .hint {
+            font-size: 14px;
+            margin-bottom: 2rem;
+        }
+        .continue-btn {
+            .custom-send {
+                background-color: var(--green);
+            }
+        }
+    }
+}

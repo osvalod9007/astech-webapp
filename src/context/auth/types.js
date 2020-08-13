@@ -1,0 +1,7 @@
+export const AUTH_SUCCESS = "AUTH_SUCCESS";
+export const AUTH_FAILURE = "AUTH_FAILURE";
+
+export const USER_SUCCESS = "USER_SUCCESS";
+export const USER_FAILURE = "USER_FAILURE";
+
+export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
